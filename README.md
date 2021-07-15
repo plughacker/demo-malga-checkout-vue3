@@ -1,24 +1,28 @@
-# vue3
+# Demo Plug Checkout Vue3
 
-## Project setup
-```
+This project is a demo of Plug Checkout running on Vue3
+
+## Running App
+
+In the project directory, you can run:
+
+```bash
 yarn install
+# or
+npm install
 ```
 
-### Compiles and hot-reloads for development
-```
+The dependencies will be downloaded.
+
+```bash
 yarn serve
+# or
+npm run serve
 ```
 
-### Compiles and minifies for production
-```
-yarn build
-```
+Runs the app in the development mode.\
+Open [http://localhost:8080](http://localhost:8080) to view it in the browser.
 
-### Lints and fixes files
-```
-yarn lint
-```
+## Learn More
 
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+You can know more about Plug on our [website](https://www.plugpagamentos.com/).

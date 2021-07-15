@@ -1,6 +1,6 @@
 {
-  "name": "vue3",
-  "version": "0.1.0",
+  "name": "demo-plug-checkout-vue3",
+  "version": "1.0.0",
   "private": true,
   "scripts": {
     "serve": "vue-cli-service serve",
@@ -8,6 +8,8 @@
     "lint": "vue-cli-service lint"
   },
   "dependencies": {
+    "@plug-checkout/core": "^0.0.3",
+    "@plug-checkout/vue": "^0.0.3",
     "core-js": "^3.6.5",
     "vue": "^3.0.0"
   },

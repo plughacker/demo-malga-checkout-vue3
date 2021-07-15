@@ -1,4 +1,16 @@
 import { createApp } from "vue";
+
+import {
+  applyPolyfills,
+  defineCustomElements,
+} from "@plug-checkout/core/loader";
+
 import App from "./App.vue";
 
-createApp(App).mount("#app");
+const app = createApp(App);
+
+applyPolyfills().then(() => {
+  defineCustomElements().then(() => {
+    app.mount("#app");
+  });
+});
