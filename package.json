@@ -8,8 +8,8 @@
     "lint": "vue-cli-service lint"
   },
   "dependencies": {
-    "@plug-checkout/core": "^0.0.3",
-    "@plug-checkout/vue": "^0.0.3",
+    "@plug-checkout/core": "^0.0.4",
+    "@plug-checkout/vue": "^0.0.4",
     "core-js": "^3.6.5",
     "vue": "^3.0.0"
   },

@@ -1,17 +1,36 @@
 <template>
   <main>
-    <PlugCheckout />
+    <PlugCheckout
+      :publicKey="'<YOUR_PUBLIC_KEY>'"
+      :clientId="'<YOUR_CLIENT_ID>'"
+      :merchantId="'<YOUR_MERCHANT_ID>'"
+      :statementDescriptor="'#1 Demonstration Plug Checkout'"
+      :amount="100"
+      :installmentsConfig="{ show: true, quantity: 2 }"
+      :customFormStyleClasses="{ submitButton: 'custom-submit-button' }"
+      @paymentSuccess="handlePaymentSuccess"
+      @paymentFailed="handlePaymentFailed"
+    />
   </main>
 </template>
 
 <script lang="ts">
 import { defineComponent } from "vue";
 import PlugCheckout from "@plug-checkout/vue";
+import { PaymentSuccess, PaymentFailed } from "./App.types";
 
 export default defineComponent({
   name: "App",
   components: {
     PlugCheckout,
+  },
+  methods: {
+    handlePaymentSuccess({ detail: { data } }: PaymentSuccess) {
+      console.log(data);
+    },
+    handlePaymentFailed({ detail: { error } }: PaymentFailed) {
+      console.log(error);
+    },
   },
 });
 </script>
