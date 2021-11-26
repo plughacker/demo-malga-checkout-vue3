@@ -1,13 +1,52 @@
 <template>
   <main>
     <PlugCheckout
-      :publicKey="'<YOUR_PUBLIC_KEY>'"
-      :clientId="'<YOUR_CLIENT_ID>'"
-      :merchantId="'<YOUR_MERCHANT_ID>'"
-      :statementDescriptor="'#1 Demonstration Plug Checkout'"
-      :amount="100"
-      :installmentsConfig="{ show: true, quantity: 2 }"
-      :customFormStyleClasses="{ submitButton: 'custom-submit-button' }"
+      :sandbox="true"
+      :publicKey="publicKey"
+      :clientId="clientId"
+      :merchantId="merchantId"
+      :paymentMethods="{
+        pix: {
+          expiresIn: 3600,
+        },
+        credit: {
+          installments: {
+            quantity: 1,
+            show: true,
+          },
+          showCreditCard: true,
+        },
+        boleto: {
+          expiresDate: '2022-12-31',
+          instructions: 'Instruções para pagamento do boleto',
+          interest: {
+            days: 1,
+            amount: 100,
+          },
+          fine: {
+            days: 2,
+            amount: 200,
+          },
+        },
+      }"
+      :transactionConfig="{
+        statementDescriptor: '#1 Demonstration Plug Checkout',
+        amount: 100,
+        description: '',
+        orderId: '',
+        customerId: customerId,
+        currency: 'BRL',
+        capture: false,
+      }"
+      :dialogConfig="{
+        show: true,
+        actionButtonLabel: 'Continuar',
+        errorActionButtonLabel: 'Tentar novamente',
+        successActionButtonLabel: 'Continuar',
+        successRedirectUrl: 'https://www.plugpagamentos.com/',
+        pixFilledProgressBarColor: '#344383',
+        pixEmptyProgressBarColor: '#D8DFF0',
+      }"
       @paymentSuccess="handlePaymentSuccess"
       @paymentFailed="handlePaymentFailed"
     />
@@ -17,18 +56,30 @@
 <script lang="ts">
 import { defineComponent } from "vue";
 import PlugCheckout from "@plug-checkout/vue";
-import { PaymentSuccess, PaymentFailed } from "./App.types";
+
+import {
+  PlugCheckoutTransactionSuccessEvent,
+  PlugCheckoutTransactionErrorEvent,
+} from "./App.types";
 
 export default defineComponent({
   name: "App",
   components: {
     PlugCheckout,
   },
+  data() {
+    return {
+      publicKey: "<YOUR_PUBLIC_KEY>",
+      clientId: "<YOUR_CLIENT_ID>",
+      merchantId: "<YOUR_MERCHANT_ID>",
+      customerId: "<CUSTOMER_ID>",
+    };
+  },
   methods: {
-    handlePaymentSuccess({ detail: { data } }: PaymentSuccess) {
+    handlePaymentSuccess(data: PlugCheckoutTransactionSuccessEvent) {
       console.log(data);
     },
-    handlePaymentFailed({ detail: { error } }: PaymentFailed) {
+    handlePaymentFailed(error: PlugCheckoutTransactionErrorEvent) {
       console.log(error);
     },
   },
@@ -40,6 +91,7 @@ export default defineComponent({
   /* Colors */
   --plug-checkout-color-brand-accent-light: #4ebff1;
   --plug-checkout-color-brand-accent-normal: #0055a2;
+  --plug-checkout-color-brand-clean: #d8dff0;
   --plug-checkout-color-brand-light: #0091ea;
   --plug-checkout-color-brand-normal: #5c7ec0;
   --plug-checkout-color-brand-middle: #344383;
@@ -48,16 +100,24 @@ export default defineComponent({
   --plug-checkout-color-grey-normal: #8b90a7;
   --plug-checkout-color-grey-middle: #5e6277;
   --plug-checkout-color-grey-dark: #3f4252;
+  --plug-checkout-color-grey-darkness: #1d1f2a;
   --plug-checkout-color-accent-light: #ffffff;
   --plug-checkout-color-accent-normal: #eef2f6;
   --plug-checkout-color-accent-middle: #aebfd0;
   --plug-checkout-color-warning-light: #fff8e1;
   --plug-checkout-color-warning-normal: #fac30e;
   --plug-checkout-color-warning-middle: #ffa200;
-  --plug-checkout-color-success: #32c000;
+  --plug-checkout-color-modal-success: #32c000;
+  --plug-checkout-color-modal-error: #ff1744;
+  --plug-checkout-color-modal-action-button-error: #344383;
+  --plug-checkout-color-modal-action-button-error-hover: #5c7ec0;
+  --plug-checkout-color-modal-action-button-success: #344383;
+  --plug-checkout-color-modal-action-button-success-hover: #5c7ec0;
+  --plug-checkout-color-modal-action-button-success-font-color: #ffffff;
+  --plug-checkout-color-modal-action-button-error-font-color: #ffffff;
 
   /* Typography */
-  --plug-checkout-typography-family: "Lato", sans-serif;
+  --plug-checkout-typography-family: "Roboto", sans-serif;
 
   /* Spacings */
   --plug-checkout-spacing-xxs: 4px;
@@ -74,6 +134,8 @@ export default defineComponent({
 
   /* Border Radius */
   --plug-checkout-border-radius-default: 4px;
+  --plug-checkout-border-radius-md: 6px;
+  --plug-checkout-border-radius-lg: 20px;
 
   /* Transitions Time */
   --plug-checkout-transition-slow: 0.3s;
@@ -86,6 +148,8 @@ body {
   align-items: center;
   height: 100vh;
   background: #eef2f6;
+  margin: 0;
+  padding: 8px;
 }
 
 main {
@@ -97,13 +161,10 @@ main {
   padding: 10px;
 }
 
-.custom-submit-button {
-  background: black;
-}
-
 @media only screen and (min-width: 600px) {
   main {
     padding: 50px;
+    width: 500px;
   }
 }
 </style>
