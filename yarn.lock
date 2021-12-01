@@ -990,7 +990,7 @@
     "@nodelib/fs.scandir" "2.1.5"
     fastq "^1.6.0"
 
-"@plug-checkout/core@*", "@plug-checkout/core@^1.0.3":
+"@plug-checkout/core@*":
   version "1.0.3"
   resolved "https://registry.yarnpkg.com/@plug-checkout/core/-/core-1.0.3.tgz#477a3d433304400e228aef46684932ab7080cae5"
   integrity sha512-sxl5t/k9biGuX+1As/9b8LMIpmOxa3tY3B3NXkNtYUTdLwnJsC8gcCK+63ahIOK1nOguR+xKoO+4yHgxwaPn3g==
@@ -1001,10 +1001,21 @@
     payment "2.3.0"
     yup "^0.32.9"
 
-"@plug-checkout/vue@^1.0.8":
-  version "1.0.8"
-  resolved "https://registry.yarnpkg.com/@plug-checkout/vue/-/vue-1.0.8.tgz#5055518ec205f94872fbb5e9caa5d36d3fbb0c53"
-  integrity sha512-woG2GVNu5mf3eEx6pWfsaZfQQHm+A+sD7ZpbkKVCUQ6hUD2mV6Nq5nnaphfvr59dfhORc/nQviG3YCHTydsLEw==
+"@plug-checkout/core@latest":
+  version "1.0.4"
+  resolved "https://registry.yarnpkg.com/@plug-checkout/core/-/core-1.0.4.tgz#856732d7416ed911d0f395d2a9eb416c67c514df"
+  integrity sha512-pgpQFZj2RlgKSU+Q1t2RhvMLJleP1op53CHd0dMZkgEb0kil/OiuSUqzcC1DWCZ1fwEKbZIUpUOWIsCC4GhupQ==
+  dependencies:
+    axios "^0.21.1"
+    brazilian-values "^0.10.1"
+    inputmask "^5.0.6"
+    payment "2.3.0"
+    yup "^0.32.9"
+
+"@plug-checkout/vue@latest":
+  version "1.0.9"
+  resolved "https://registry.yarnpkg.com/@plug-checkout/vue/-/vue-1.0.9.tgz#ce0ba83f9116118de604f1a3aa4695e2ce6b1e41"
+  integrity sha512-sWJqXg88dn+1ucu4wzXLI4TWncnMDRw4kRNhvI959otSb7McNkDuUwhMpTmi2jQB5P9OUX9woXMM9rtLjz+Rww==
   dependencies:
     "@plug-checkout/core" "*"
 
