@@ -956,6 +956,27 @@
     cssnano-preset-default "^4.0.0"
     postcss "^7.0.0"
 
+"@malga-checkout/core@1.7.0", "@malga-checkout/core@latest":
+  version "1.7.0"
+  resolved "https://registry.yarnpkg.com/@malga-checkout/core/-/core-1.7.0.tgz#b22afbd999f5bca75ea13723b54e1fe17ae88200"
+  integrity sha512-HtXx40+nmOf7BkxHY3QHkyAfzVNwf+RHehOI00fhB1yz4MdToKBGgTCqUYhOS2CpcgafU/zVKDiSlVbMgXEzYA==
+  dependencies:
+    "@stencil/store" "^1.5.0"
+    axios "^0.21.1"
+    brazilian-values "^0.10.1"
+    inputmask "^5.0.6"
+    matercolors "^2.3.0"
+    payment "2.3.0"
+    uuid "^8.3.2"
+    yup "^0.32.9"
+
+"@malga-checkout/vue@latest":
+  version "1.7.0"
+  resolved "https://registry.yarnpkg.com/@malga-checkout/vue/-/vue-1.7.0.tgz#5a0bbbf157b1219c96c1b7d460e5fd29f356d2da"
+  integrity sha512-aixoEbiLcNihvnkrbmJiTjIIXGyH3/iqoVZiEeE43jc2zlwJshLkBcnKTgTip/YkVTFJ+u3tZk6+uKjXbisL3Q==
+  dependencies:
+    "@malga-checkout/core" "1.7.0"
+
 "@mrmlnc/readdir-enhanced@^2.2.1":
   version "2.2.1"
   resolved "https://registry.yarnpkg.com/@mrmlnc/readdir-enhanced/-/readdir-enhanced-2.2.1.tgz#524af240d1a360527b730475ecfa1344aa540dde"
@@ -990,35 +1011,6 @@
     "@nodelib/fs.scandir" "2.1.5"
     fastq "^1.6.0"
 
-"@plug-checkout/core@*":
-  version "1.0.3"
-  resolved "https://registry.yarnpkg.com/@plug-checkout/core/-/core-1.0.3.tgz#477a3d433304400e228aef46684932ab7080cae5"
-  integrity sha512-sxl5t/k9biGuX+1As/9b8LMIpmOxa3tY3B3NXkNtYUTdLwnJsC8gcCK+63ahIOK1nOguR+xKoO+4yHgxwaPn3g==
-  dependencies:
-    axios "^0.21.1"
-    brazilian-values "^0.10.1"
-    inputmask "^5.0.6"
-    payment "2.3.0"
-    yup "^0.32.9"
-
-"@plug-checkout/core@latest":
-  version "1.0.4"
-  resolved "https://registry.yarnpkg.com/@plug-checkout/core/-/core-1.0.4.tgz#856732d7416ed911d0f395d2a9eb416c67c514df"
-  integrity sha512-pgpQFZj2RlgKSU+Q1t2RhvMLJleP1op53CHd0dMZkgEb0kil/OiuSUqzcC1DWCZ1fwEKbZIUpUOWIsCC4GhupQ==
-  dependencies:
-    axios "^0.21.1"
-    brazilian-values "^0.10.1"
-    inputmask "^5.0.6"
-    payment "2.3.0"
-    yup "^0.32.9"
-
-"@plug-checkout/vue@latest":
-  version "1.0.9"
-  resolved "https://registry.yarnpkg.com/@plug-checkout/vue/-/vue-1.0.9.tgz#ce0ba83f9116118de604f1a3aa4695e2ce6b1e41"
-  integrity sha512-sWJqXg88dn+1ucu4wzXLI4TWncnMDRw4kRNhvI959otSb7McNkDuUwhMpTmi2jQB5P9OUX9woXMM9rtLjz+Rww==
-  dependencies:
-    "@plug-checkout/core" "*"
-
 "@soda/friendly-errors-webpack-plugin@^1.7.1":
   version "1.8.0"
   resolved "https://registry.yarnpkg.com/@soda/friendly-errors-webpack-plugin/-/friendly-errors-webpack-plugin-1.8.0.tgz#84751d82a93019d5c92c0cf0e45ac59087cd2240"
@@ -1033,6 +1025,11 @@
   version "1.0.2"
   resolved "https://registry.yarnpkg.com/@soda/get-current-script/-/get-current-script-1.0.2.tgz#a53515db25d8038374381b73af20bb4f2e508d87"
   integrity sha512-T7VNNlYVM1SgQ+VsMYhnDkcGmWhQdL0bDyGm5TlQ3GBXnJscEClUUOKduWTmm2zCnvNLC1hc3JpuXjs/nFOc5w==
+
+"@stencil/store@^1.5.0":
+  version "1.5.0"
+  resolved "https://registry.yarnpkg.com/@stencil/store/-/store-1.5.0.tgz#5c4e14ed078771bb8ed635867cfa8c3452f15ac4"
+  integrity sha512-fe5fCF6dgVlDM1iLRkkJUyUh0Tfx305asVGgMAJjIs7Q+x/b1pGgTLROm9Ibr53PZuFwr5Kg+4h9p4FLbYqHgA==
 
 "@types/body-parser@*":
   version "1.19.0"
@@ -5849,6 +5846,11 @@ map-visit@^1.0.0:
   dependencies:
     object-visit "^1.0.0"
 
+matercolors@^2.3.0:
+  version "2.3.0"
+  resolved "https://registry.yarnpkg.com/matercolors/-/matercolors-2.3.0.tgz#f90055d99303f11dad0c6b15f0574f9d251ed5b6"
+  integrity sha512-IqwCB/uao4mI/ZnySGxN5WVfuXj4+1k/IS8u+KvH1nrDEb8XkdZWR8sl9mZuh17GSVfGu0AuGAWYpWFZKGBF0A==
+
 md5.js@^1.3.4:
   version "1.3.5"
   resolved "https://registry.yarnpkg.com/md5.js/-/md5.js-1.3.5.tgz#b5d07b8e3216e3e27cd728d72f70d1e6a342005f"
@@ -8862,6 +8864,11 @@ uuid@^3.3.2, uuid@^3.4.0:
   version "3.4.0"
   resolved "https://registry.yarnpkg.com/uuid/-/uuid-3.4.0.tgz#b23e4358afa8a202fe7a100af1f5f883f02007ee"
   integrity sha512-HjSDRw6gZE5JMggctHBcjVak08+KEVhSIiDzFnT9S9aegmp85S/bReBVTb4QTFaRNptJ9kuYaNhnbNEOkbKb/A==
+
+uuid@^8.3.2:
+  version "8.3.2"
+  resolved "https://registry.yarnpkg.com/uuid/-/uuid-8.3.2.tgz#80d5b5ced271bb9af6c445f21a1a04c606cefbe2"
+  integrity sha512-+NYs2QeMWy+GWFOEm9xnn6HCDp0l7QBD7ml8zLUmJ+93Q5NF0NocErnwkTkXVFNiX3/fpC6afS8Dhb/gz7R7eg==
 
 v8-compile-cache@^2.0.3:
   version "2.3.0"
